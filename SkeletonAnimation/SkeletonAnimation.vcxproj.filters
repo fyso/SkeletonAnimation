@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="PositionBasedDynamics.cu">
+      <Filter>Constraints</Filter>
+    </CudaCompile>
+    <CudaCompile Include="TimeStepController.cu">
+      <Filter>Simulation</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Solvers.cu">
+      <Filter>Math</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{f5baa267-9076-439a-a117-8167c9b738be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{07d2ad1d-fac4-4bbc-a9ef-10eda4d88210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxelization">
+      <UniqueIdentifier>{029484b9-2694-4a39-9eac-8fb13677265b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{21fbab86-7be4-4fbd-a8a9-54488e96fe83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Simulation">
+      <UniqueIdentifier>{cb5d1d59-0a2d-471f-9f7b-0637e15ea484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Constraints">
+      <UniqueIdentifier>{9141693c-0195-419e-8c5a-8509e5e5517d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{023e7e34-7a4e-4549-9a8b-a1cbd03dbceb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shaders\VoxelizeInterface.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\VoxelizeInterface.gs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Shaders\VoxelizeInterface.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnimationConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Voxelizer.h">
+      <Filter>Voxelization</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSource.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TetModel.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleData.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeMatchingConstraint.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationModel.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeStepController.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="CUDACommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DistanceConstraint.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumeConstraint.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="UndirectedGraph.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonController.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleLayer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Skinner.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectionConstraint.h">
+      <Filter>Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseGraph.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorableGraph.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindingGraph.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Voxelizer.cpp">
+      <Filter>Voxelization</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSource.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TetModel.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulationModel.cpp">
+      <Filter>Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation.cpp">
+      <Filter>Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="UndirectedGraph.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonController.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleLayer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Skinner.cpp">
+      <Filter>Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorableGraph.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindingGraph.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
