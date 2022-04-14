@@ -12,12 +12,13 @@ namespace Animation
 		~CSkinner();
 
 		void draw(graphics::CShader vShader);
-		void updateAndDraw(graphics::CShader vShader, const std::vector<Eigen::Vector3d>& vPositions);
+		void updateAndDraw(graphics::CShader vShader, const std::vector<Eigen::Vector3d>& vPositions, bool vOutPutData = false);
 
 	private:
 		void __initMeshVertices();
 		void __updateVertices(const std::vector<Eigen::Vector3d>& vPositions);
 
+		unsigned int Frame = 0;
 		double m_AngleThreshold = -1.0;
 		boost::shared_ptr<graphics::CModel> m_pModel = nullptr;
 		CParticleSource *m_pParticleSource = nullptr;

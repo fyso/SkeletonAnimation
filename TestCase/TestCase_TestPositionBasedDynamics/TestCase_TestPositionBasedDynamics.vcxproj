@@ -29,7 +29,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.0.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.3.props" />
   </ImportGroup>
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
@@ -71,7 +71,7 @@
     <Import Project="D:\vc_packages\inteltbb.devel.win.2019.6.245\build\native\inteltbb.devel.win.targets" Condition="Exists('D:\vc_packages\inteltbb.devel.win.2019.6.245\build\native\inteltbb.devel.win.targets')" />
     <Import Project="D:\vc_packages\hive-common.0.3.5.1\build\native\hive-common.targets" Condition="Exists('D:\vc_packages\hive-common.0.3.5.1\build\native\hive-common.targets')" />
     <Import Project="D:\vc_packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets" Condition="Exists('D:\vc_packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" />
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.0.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.3.targets" />
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

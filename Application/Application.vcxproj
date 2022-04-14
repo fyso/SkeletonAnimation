@@ -93,7 +93,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.0.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.3.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -286,7 +286,7 @@
     <Import Project="D:\vc_packages\inteltbb.redist.win.2019.6.245\build\native\inteltbb.redist.win.targets" Condition="Exists('D:\vc_packages\inteltbb.redist.win.2019.6.245\build\native\inteltbb.redist.win.targets')" />
     <Import Project="D:\vc_packages\inteltbb.devel.win.2019.6.245\build\native\inteltbb.devel.win.targets" Condition="Exists('D:\vc_packages\inteltbb.devel.win.2019.6.245\build\native\inteltbb.devel.win.targets')" />
     <Import Project="D:\vc_packages\hive-common.0.3.5\build\native\hive-common.targets" Condition="Exists('D:\vc_packages\hive-common.0.3.5\build\native\hive-common.targets')" />
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.0.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.3.targets" />
     <Import Project="D:\vc_packages\Eigen.3.3.7\build\native\Eigen.targets" Condition="Exists('D:\vc_packages\Eigen.3.3.7\build\native\Eigen.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

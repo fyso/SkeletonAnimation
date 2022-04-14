@@ -17,8 +17,8 @@ void main()
 
 	float Diff = max(dot(-LightDir, Norm), 0.0f);
 	vec3 Diffuse = Diff * LightColor;
+	vec3 HighLight = 0.5f * LightColor * pow(max(0, dot(-LightDir, Norm)), 16.0f);
 
-	vec3 Color = (Ambient + Diffuse) * ObjectColor;
-	vec3 Color = vec3(0.0f£¬1.0f);
+	vec3 Color = (Ambient + Diffuse + HighLight) * ObjectColor;
 	FragColor = vec4(Color, 1.0);
 }

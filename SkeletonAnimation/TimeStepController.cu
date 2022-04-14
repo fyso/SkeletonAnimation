@@ -25,7 +25,7 @@ void Animation::CTimeStepController::init(CSimulationModel& vSimulationModel, in
 
 	cudaDeviceProp DeviceProp;
 	HANDLE_ERROR(cudaGetDeviceProperties(&DeviceProp, 0));
-	m_MaxThreadsPerBlock = DeviceProp.maxThreadsPerBlock;
+	m_MaxThreadsPerBlock = DeviceProp.maxThreadsPerBlock / 4;
 	HANDLE_ERROR(cudaSetDevice(0));
 
 	std::vector<CParticleData> ParticleData;

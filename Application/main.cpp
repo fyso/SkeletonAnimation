@@ -241,7 +241,7 @@ void drawModel(Animation::CSkinner* vSkinner, const std::vector<Eigen::Vector3d>
 		ShaderForModel->setMat4("projection", vProjection);
 		ShaderForModel->setVec3("ViewPos", vCamera->getPosition());
 		ShaderForModel->setVec3("LightDir", glm::vec3(0, 0, -1.0f));
-		vSkinner->updateAndDraw(*ShaderForModel, vPosition);
+		vSkinner->updateAndDraw(*ShaderForModel, vPosition, true);
 		glCullFace(GL_BACK);
 	}
 }
