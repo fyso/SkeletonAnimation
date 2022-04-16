@@ -25,7 +25,7 @@ void drawParticles(Animation::CParticleSource* vParticleSource, Animation::CPart
 void drawFloor(const glm::mat4& vModel, const glm::mat4& vView, const glm::mat4& vProjection);
 void writeDataToTxt(const std::vector<Eigen::Vector3d>& vPositions);
 
-bool isDrawParticle = false;
+bool isDrawParticle = true;
 bool isStatic = false;
 bool isCaptureFrameBuffer = true;
 int  currentFrameIndex = 0;
@@ -59,10 +59,53 @@ int main()
 		const std::string ModelPath = CApplicationConfig::getInstance()->getAttribute<std::string>(KEY_WORDS::MODEL_PATH);
 		const std::string VoxelDataPath = CApplicationConfig::getInstance()->getAttribute<std::string>(KEY_WORDS::VOXEL_DATA_PATH);
 		boost::shared_ptr<graphics::CModel> SimulationModel(new graphics::CModel(ModelPath));
+
+		/*std::ofstream FileOut("./indices output/FatGuyJump_GPU_Indices.txt", std::fstream::out);
+		const int MeshCount = SimulationModel->getMumOfMeshes();
+		for (int i = 0; i < MeshCount; i++)
+		{
+			graphics::CMesh Mesh = SimulationModel->getMeshesAt(i);
+			for (int k = 0; k < Mesh.getNumOfIndices(); k++)
+			{
+				unsigned int Index = Mesh.getIndexAt(k);
+				FileOut << Index << std::endl;
+			}
+			FileOut << "END" << std::endl;
+		}
+		FileOut.close();
+
+		FileOut.open("./indices output/FatGuyJump_GPU_Normal.txt", std::fstream::out);
+		for (int i = 0; i < MeshCount; i++)
+		{
+			graphics::CMesh Mesh = SimulationModel->getMeshesAt(i);
+			for (int k = 0; k < Mesh.getNumOfVertices(); k++)
+			{
+				graphics::SVertex Vertex = Mesh.getVertexAt(k);
+				FileOut << Vertex.Normal.x << " " << Vertex.Normal.y << " " << Vertex.Normal.z << std::endl;
+			}
+			FileOut << "END" << std::endl;
+		}
+		FileOut.close();
+
+		FileOut.open("./indices output/FatGuyJump_GPU_UV.txt", std::fstream::out);
+		for (int i = 0; i < MeshCount; i++)
+		{
+			graphics::CMesh Mesh = SimulationModel->getMeshesAt(i);
+			for (int k = 0; k < Mesh.getNumOfVertices(); k++)
+			{
+				graphics::SVertex Vertex = Mesh.getVertexAt(k);
+				FileOut << Vertex.TexCoords.x << " " << Vertex.TexCoords.y << std::endl;
+			}
+			FileOut << "END" << std::endl;
+		}
+		FileOut.close();*/
+
 		boost::shared_ptr<Animation::CVoxelizer> Voxelizer(new Animation::CVoxelizer);
-		Voxelizer->loadVoxelData(VoxelDataPath);
+		Voxelizer->voxelize(ModelPath);
 		boost::shared_ptr<Animation::CParticleSource> ParticleSource(new Animation::CParticleSource);
 		Voxelizer->sendVoxels(*ParticleSource);
+
+		Voxelizer->saveVoxelData(VoxelDataPath);
 
 		GetSystemTime(&OldUtcTime);
 		ParticleSource->initialize();

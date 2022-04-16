@@ -158,7 +158,11 @@ void Animation::CParticleLayer::__generateBindInfo()
 				ShortestDistance[j] = m_pGraph->findShortestDistance(Index, ParticleIndex);
 			}
 
-			int MinDistance = *std::min_element(ShortestDistance.begin(), ShortestDistance.end());
+			auto MinIt = std::min_element(ShortestDistance.begin(), ShortestDistance.end());
+			if (MinIt == ShortestDistance.end())
+				std::cout << ShortestDistance.size() << std::endl;
+			int MinDistance = MinIt == ShortestDistance.end() ? INT_MAX : *MinIt;
+			//int MinDistance = *std::min_element(ShortestDistance.begin(), ShortestDistance.end());
 			MinDistance = MinDistance > 0 ? MinDistance : 1;//最短距离可能是自己到自己
 			ShortestDistanceToBone[k] = MinDistance;
 		}
