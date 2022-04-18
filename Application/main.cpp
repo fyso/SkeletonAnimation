@@ -60,7 +60,7 @@ int main()
 		const std::string VoxelDataPath = CApplicationConfig::getInstance()->getAttribute<std::string>(KEY_WORDS::VOXEL_DATA_PATH);
 		boost::shared_ptr<graphics::CModel> SimulationModel(new graphics::CModel(ModelPath));
 
-		/*std::ofstream FileOut("./indices output/FatGuyJump_GPU_Indices.txt", std::fstream::out);
+		std::ofstream FileOut("./indices output/FatGuy_GPU_Indices.txt", std::fstream::out);
 		const int MeshCount = SimulationModel->getMumOfMeshes();
 		for (int i = 0; i < MeshCount; i++)
 		{
@@ -74,7 +74,7 @@ int main()
 		}
 		FileOut.close();
 
-		FileOut.open("./indices output/FatGuyJump_GPU_Normal.txt", std::fstream::out);
+		FileOut.open("./indices output/FatGuy_GPU_Normal.txt", std::fstream::out);
 		for (int i = 0; i < MeshCount; i++)
 		{
 			graphics::CMesh Mesh = SimulationModel->getMeshesAt(i);
@@ -87,7 +87,7 @@ int main()
 		}
 		FileOut.close();
 
-		FileOut.open("./indices output/FatGuyJump_GPU_UV.txt", std::fstream::out);
+		FileOut.open("./indices output/FatGuy_GPU_UV.txt", std::fstream::out);
 		for (int i = 0; i < MeshCount; i++)
 		{
 			graphics::CMesh Mesh = SimulationModel->getMeshesAt(i);
@@ -98,7 +98,7 @@ int main()
 			}
 			FileOut << "END" << std::endl;
 		}
-		FileOut.close();*/
+		FileOut.close();
 
 		boost::shared_ptr<Animation::CVoxelizer> Voxelizer(new Animation::CVoxelizer);
 		Voxelizer->voxelize(ModelPath);
@@ -156,20 +156,6 @@ int main()
 			OldTime = ((OldUtcTime.wHour * 60 + OldUtcTime.wMinute) * 60 + OldUtcTime.wSecond) * 1000 + OldUtcTime.wMilliseconds;
 			CurTime = ((CurUtcTime.wHour * 60 + CurUtcTime.wMinute) * 60 + CurUtcTime.wSecond) * 1000 + CurUtcTime.wMilliseconds;
 			TimeCost = CurTime - OldTime;
-			
-			std::ofstream FileOut("./FatGuyJump_GPU_8_2_4_1_LCF.txt", std::fstream::out | std::fstream::app);
-			WatchCount++;
-			if (WatchCount > 40 && WatchCount < 200)
-			{
-				for (int i = 0; i < Positions.size(); i++)
-				{
-					Eigen::Vector3d DeltaX = Positions[i] - OldPositions[i];
-					FileOut << DeltaX.x() << " " << DeltaX.y() << " " << DeltaX.z() << " "  
-						<< Positions[i].x() << " " << Positions[i].y() << " " << Positions[i].z() << " " << TimeCost << std::endl;
-				}
-				FileOut << "END" << std::endl;
-			}
-			FileOut.close();
 
 			if (isDrawParticle)
 			{

@@ -32,19 +32,19 @@ void CSkinner::updateAndDraw(graphics::CShader vShader, const std::vector<Eigen:
 
 	if (vOutPutData)
 	{
-		//std::ofstream FileOut("./animation output/FatGuyJump_GPU_Vertex_" + std::to_string(Frame++) + ".txt", std::fstream::out);
-		//const int MeshCount = m_MeshVertices.size();
-		//for (int i = 0; i < MeshCount; i++)
-		//{
-		//	const int VerticesCount = m_MeshVertices[i].size();
-		//	for (int k = 0; k < VerticesCount; k++)
-		//	{
-		//		Eigen::Vector3d Pos = m_MeshVertices[i][k].Position;
-		//		FileOut << Pos.x() << " " << Pos.y() << " " << Pos.z() << std::endl;
-		//	}
-		//	FileOut << "END" << std::endl;
-		//}
-		//FileOut.close();
+		std::ofstream FileOut("./animation output/FatGuy_GPU_Vertex_" + std::to_string(Frame++) + ".txt", std::fstream::out);
+		const int MeshCount = m_MeshVertices.size();
+		for (int i = 0; i < MeshCount; i++)
+		{
+			const int VerticesCount = m_MeshVertices[i].size();
+			for (int k = 0; k < VerticesCount; k++)
+			{
+				Eigen::Vector3d Pos = m_MeshVertices[i][k].Position;
+				FileOut << Pos.x() << " " << Pos.y() << " " << Pos.z() << std::endl;
+			}
+			FileOut << "END" << std::endl;
+		}
+		FileOut.close();
 	}
 
 	m_pModel->draw(vShader);
